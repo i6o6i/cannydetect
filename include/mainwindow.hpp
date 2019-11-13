@@ -11,17 +11,9 @@ class mainwindow :public QWidget
 	mainwindow(QWidget *parent=nullptr);
 	mainwindow(char* filename);
 	void show();
-	void showrgb(bool morph_flag,matrics* imgmatrix,Mat (matrics::*fun_ptr)(int));
-	void showrgb(Mat img);
-	void showgray(Mat img);
+	QPixmap Mat2Pixmap(Mat mat);
     private:
     matrics *img;
     QGridLayout *gridlyou;
     QGroupBox *groupbox;
-    QPushButton *fftBut;
-    QPushButton *medianfilterBut;
-    QPushButton *avgfilterBut;
-    QPushButton *openBut;
-    QPushButton *closeBut;
-    QPushButton *equalyBut;
 };

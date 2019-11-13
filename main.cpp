@@ -12,14 +12,16 @@ int main(int argc,char *argv[])
 
     return a.exec();
     */
-    matrics temp("/home/kkk/Pictures/lena.jpg");
+    matrics temp("/root/123.jpg");
 
     temp.gausblur(3);
 
     temp.enhance(matrics::sobel);
 	//imshow("abc",temp.GauBlurMat);
 	temp.nonmaximaSupress();
-    imshow("open",temp.doubleArray2Mat(temp.In));
+    temp.doubleTholdNlink(150,300);
+	//imshow("abc",temp.GauBlurMat);
+    imshow("open",temp.doubleArray2Mat(temp.Infinal));
     waitKey();
     return 0;
 }

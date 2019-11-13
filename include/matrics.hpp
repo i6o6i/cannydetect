@@ -4,10 +4,18 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
+#include <stack>
+#include <queue>
 #define oneighthPI (3.141592654/8.)
 
 using namespace cv;
 using namespace std;
+class Point0{
+    public:
+	int x;
+	int y;
+	Point0(int x,int y);
+};
 class matrics
 {
     public:
