@@ -1,5 +1,6 @@
 #include "matrics.hpp"
 
+
 Point0::Point0(int x,int y)
 {
     this->x=x;
@@ -59,7 +60,7 @@ matrics::thinMat matrics::triTo2d(Esn0 es0)
 
 Mat matrics::doubleArray2Mat(thinMat boostarr)
 {
-	Mat res = Mat::zeros(Size(boostarr.shape()[0], boostarr.shape()[1]), CV_64F);
+	Mat res = Mat::zeros(Size(boostarr.shape()[1], boostarr.shape()[0]), CV_64F);
 
 	for(size_t i = 0; i < boostarr.shape()[0]; i++)
 		for(size_t j = 0; j < boostarr.shape()[1]; j++)
@@ -179,7 +180,6 @@ void matrics::doubleTholdNlink(double maxthreshold, double minthreshold)
     bool connected = false;
     size_t rows=In.shape()[0],cols=In.shape()[1];
     boost::multi_array<int, 2> visited(boost::extents[rows][cols]);
-    typedef boost::multi_array<int, 2>::index visitedIndex;
     Infinal.resize(boost::extents[rows][cols]);
 
     for(size_t i = 0; i < rows; i++)
@@ -338,9 +338,6 @@ void matrics::doubleTholdNlink(double maxthreshold, double minthreshold)
 
 	}
     }
-    std::cout<<Infinal.shape()[0]<<" "<<Infinal.shape()[1]<<std::endl;
-    std::cout<<visited.shape()[0]<<" "<<visited.shape()[1]<<std::endl;
-    std::cout<<visited[695][373]<<" "<<visited[695][374]<<std::endl;
 
     for(size_t i=0;i<visited.shape()[0];i++)
 	for(size_t j=0;j<visited.shape()[1];j++)
